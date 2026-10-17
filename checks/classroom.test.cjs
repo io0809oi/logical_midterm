@@ -1,5 +1,14 @@
 const assert=require('node:assert/strict');const L=require('../dist/logic.js'),ps=require('../dist/problems.js');
-assert.equal(ps.length,56);
+assert.equal(ps.length,65);
+assert.equal(new Set(ps.map(p=>p.id)).size,65);
+assert.deepEqual(ps.slice(0,4).map(p=>p.id),['own-1','own-2','own-3','own-4']);
+assert(ps.slice(0,4).every(p=>p.category==='첫걸음'));
+const extra=ps.filter(p=>p.id.startsWith('h41-'));
+assert.equal(extra.length,9);
+assert.equal(extra.filter(p=>p.kind==='필연적 참').length,5);
+assert(extra.every(p=>p.sourceFile==='handout-4-1.pdf'&&p.page===1));
+const fs=require('node:fs'),path=require('node:path');
+for(const p of ps.filter(p=>p.page))assert(fs.existsSync(path.join(__dirname,'../dist/sources',p.sourceFile)),p.id+' missing PDF');
 function val(a,m){if(typeof a==='string')return a==='⊥'?false:!!m[a];switch(a[0]){case'¬':return !val(a[1],m);case'∧':return val(a[1],m)&&val(a[2],m);case'∨':return val(a[1],m)||val(a[2],m);case'→':return !val(a[1],m)||val(a[2],m);case'↔':return val(a[1],m)===val(a[2],m)}}
 for(const p of ps){let s=L.initial(p.premises);for(const [f,r,refs] of p.solution)s=r==='닫기'?L.close(s):L.add(s,f,r,refs,p.allowed);assert.equal(s.stack.length,0,p.id+' open assumptions');assert(L.eq(s.lines.at(-1).a,L.parse(p.goal)),p.id+' missing goal');let atoms=[...new Set((p.premises.map(L.parse).concat(L.parse(p.goal))).flatMap(function scan(x){return typeof x==='string'?(x==='⊥'?[]:[x]):x[0]==='¬'?scan(x[1]):[...scan(x[1]),...scan(x[2])]}))];for(let mask=0;mask<2**atoms.length;mask++){let m=Object.fromEntries(atoms.map((a,i)=>[a,!!(mask>>i&1)]));if(p.premises.every(f=>val(L.parse(f),m)))assert(val(L.parse(p.goal),m),p.id+' invalid at '+JSON.stringify(m))}}
 let s=L.initial(['Q','~Q']);s=L.add(s,'⊥','⊥I','1,2',['⊥I']);assert.throws(()=>L.add(s,'Q','~E','1',['~E']));assert.doesNotThrow(()=>L.add(L.initial(['~~P']),'P','~E','1',['~E']));assert.doesNotThrow(()=>L.add(L.initial(['P v Q','~P']),'Q','vE','1,2',['vE']));assert.throws(()=>L.add(L.initial(['P v Q','P->R','Q->R']),'R','vE','1,2',['vE']));assert.doesNotThrow(()=>L.add(L.initial(['P<->Q']),'P->Q','<->E','1',['<->E']));assert.throws(()=>L.add(L.initial(['P<->Q','P']),'Q','<->E','1,2',['<->E']));assert.throws(()=>L.add(L.initial(['P','~P']),'⊥','⊥I','1,2',['&I']));

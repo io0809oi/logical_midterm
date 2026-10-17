@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');
+const {normalize}=require('../dist/progress.js');
+const L=require('../dist/logic.js'),ps=require('../dist/problems.js');
+const starter={state:L.initial(['Q','~Q']),history:[]};
+const firstHandout={state:L.initial(['A -> ~D','D v C','A']),history:[]};
+const migrated=normalize({drafts:{44:starter,0:firstHandout},current:44,solved:['own-1','h4-e1-1']},ps,true);
+assert.equal(migrated.currentId,'own-1');
+assert.deepEqual(migrated.drafts['own-1'],starter);
+assert.deepEqual(migrated.drafts['h4-e1-1'],firstHandout);
+assert.equal(ps[0].id,'own-1');
+assert.deepEqual(migrated.solved,['own-1','h4-e1-1']);
+const reordered=normalize(migrated,[...ps].reverse());
+assert.deepEqual(reordered,migrated);
+assert.equal(normalize({},ps).currentId,'own-1');
+assert.equal(normalize(null,ps).currentId,'own-1');
+assert.equal(normalize({current:55},ps,true).currentId,'own-12');
+console.log('PASS saved drafts and completion records survive reordered problems and legacy migration.');

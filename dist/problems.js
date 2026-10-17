@@ -1,6 +1,162 @@
 // Classroom edition: source page numbers refer to the supplied PDFs.
 const PROBLEMS = [
   {
+    "id": "own-1",
+    "title": "첫걸음 · 모순 도입",
+    "level": "기초",
+    "premises": [
+      "Q",
+      "~Q"
+    ],
+    "goal": "⊥",
+    "source": "창작",
+    "page": null,
+    "section": "추가 연습",
+    "hint": "⊥를 입력하고 ⊥I, 근거 1,2를 선택하세요.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "category": "첫걸음",
+    "solution": [
+      [
+        "⊥",
+        "⊥I",
+        "2,1"
+      ]
+    ],
+    "kind": "타당성"
+  },
+  {
+    "id": "own-2",
+    "title": "첫걸음 · 이중부정 제거",
+    "level": "기초",
+    "premises": [
+      "~~P"
+    ],
+    "goal": "P",
+    "source": "창작",
+    "page": null,
+    "section": "추가 연습",
+    "hint": "수업의 ~E는 ~~P에서 P를 얻는 규칙입니다.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "category": "첫걸음",
+    "solution": [
+      [
+        "P",
+        "~E",
+        "1"
+      ]
+    ],
+    "kind": "타당성"
+  },
+  {
+    "id": "own-3",
+    "title": "첫걸음 · 선언 제거",
+    "level": "기초",
+    "premises": [
+      "P v Q",
+      "~P"
+    ],
+    "goal": "Q",
+    "source": "창작",
+    "page": null,
+    "section": "추가 연습",
+    "hint": "vE에 선언문과 ~P가 있는 두 줄을 인용하세요.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "category": "첫걸음",
+    "solution": [
+      [
+        "Q",
+        "vE",
+        "1,2"
+      ]
+    ],
+    "kind": "타당성"
+  },
+  {
+    "id": "own-4",
+    "title": "첫걸음 · 쌍조건문 제거",
+    "level": "기초",
+    "premises": [
+      "P <-> Q",
+      "P"
+    ],
+    "goal": "Q",
+    "source": "창작",
+    "page": null,
+    "section": "추가 연습",
+    "hint": "<->E로 P → Q를 꺼낸 뒤 ->E를 적용하세요.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "category": "첫걸음",
+    "solution": [
+      [
+        "(P → Q)",
+        "<->E",
+        "1"
+      ],
+      [
+        "Q",
+        "->E",
+        "3,2"
+      ]
+    ],
+    "kind": "타당성"
+  },
+  {
     "id": "h4-e1-1",
     "title": "연습 1 · 1번",
     "level": "기초",
@@ -37,6 +193,8 @@ const PROBLEMS = [
         "5"
       ]
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "kind": "타당성"
   },
   {
@@ -92,6 +250,8 @@ const PROBLEMS = [
         "9"
       ]
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "kind": "타당성"
   },
   {
@@ -136,6 +296,8 @@ const PROBLEMS = [
         "2-4"
       ]
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "kind": "타당성"
   },
   {
@@ -186,6 +348,8 @@ const PROBLEMS = [
         "3-6"
       ]
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "kind": "타당성"
   },
   {
@@ -215,6 +379,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "A",
@@ -277,6 +443,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "A",
@@ -404,6 +572,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "B",
@@ -466,6 +636,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "E",
@@ -539,6 +711,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "(G → P)",
@@ -802,6 +976,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "H",
@@ -1069,6 +1245,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "(B ↔ ~C)",
@@ -1106,6 +1284,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "(A v B)",
@@ -1159,6 +1339,8 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "((C v D) → ~B)",
@@ -1374,6 +1556,8 @@ const PROBLEMS = [
       "가정"
     ],
     "kind": "필연적 참",
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "(K → F)",
@@ -1448,6 +1632,8 @@ const PROBLEMS = [
       "가정"
     ],
     "kind": "필연적 참",
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "~((I & ~J) v ((J & K) v ~(K & I)))",
@@ -1665,6 +1851,8 @@ const PROBLEMS = [
     ],
     "kind": "필연적 거짓",
     "note": "원문의 문장이 필연적으로 거짓임을 보이기 위해, 그 문장을 전제로 놓고 모순 ⊥를 도출하는 형식입니다.",
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "(H v ~B)",
@@ -1732,6 +1920,8 @@ const PROBLEMS = [
     ],
     "kind": "필연적 거짓",
     "note": "원문의 문장을 전제로 삼아 ⊥를 도출하면 그 문장의 필연적 거짓이 증명됩니다.",
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "((H & F) → C)",
@@ -2004,6 +2194,8 @@ const PROBLEMS = [
       "가정"
     ],
     "kind": "비일관성",
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "(~F & ~T)",
@@ -2062,6 +2254,8 @@ const PROBLEMS = [
       "가정"
     ],
     "kind": "비일관성",
+    "category": "핸드아웃 4",
+    "sourceFile": "handout-4.pdf",
     "solution": [
       [
         "G",
@@ -2121,6 +2315,807 @@ const PROBLEMS = [
     ]
   },
   {
+    "id": "h41-t1",
+    "title": "추가 연습 1-1 · 조건문의 연쇄",
+    "level": "기초",
+    "premises": [],
+    "goal": "(Q->R)->((P->Q)->(P->R))",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "1. 필연적 참 · 1번",
+    "hint": "Q → R, P → Q, P를 차례로 가정한 뒤 Q와 R을 도출하세요.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "solution": [
+      [
+        "(Q → R)",
+        "가정",
+        ""
+      ],
+      [
+        "(P → Q)",
+        "가정",
+        ""
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "Q",
+        "->E",
+        "2,3"
+      ],
+      [
+        "R",
+        "->E",
+        "1,4"
+      ],
+      [
+        "(P → R)",
+        "->I",
+        "3-5"
+      ],
+      [
+        "((P → Q) → (P → R))",
+        "->I",
+        "2-6"
+      ],
+      [
+        "((Q → R) → ((P → Q) → (P → R)))",
+        "->I",
+        "1-7"
+      ]
+    ],
+    "category": "추가 연습 4.1",
+    "kind": "필연적 참"
+  },
+  {
+    "id": "h41-t2",
+    "title": "추가 연습 1-2 · 두 경우의 같은 결론",
+    "level": "중급",
+    "premises": [],
+    "goal": "(P->R)->((Q->R)->((P v Q)->R))",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "1. 필연적 참 · 2번",
+    "hint": "세 전건을 가정한 뒤 ~R을 가정하세요. P가 모순임을 보이면 ~P와 P v Q에서 Q를 얻습니다.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "note": "원문 1-2 끝의 여분 닫는 괄호 한 개를 바로잡았습니다. 논리적 내용은 동일합니다.",
+    "solution": [
+      [
+        "(P → R)",
+        "가정",
+        ""
+      ],
+      [
+        "(Q → R)",
+        "가정",
+        ""
+      ],
+      [
+        "(P v Q)",
+        "가정",
+        ""
+      ],
+      [
+        "~R",
+        "가정",
+        ""
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "R",
+        "->E",
+        "1,5"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "4,6"
+      ],
+      [
+        "~P",
+        "~I",
+        "5-7"
+      ],
+      [
+        "Q",
+        "vE",
+        "3,8"
+      ],
+      [
+        "R",
+        "->E",
+        "2,9"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "4,10"
+      ],
+      [
+        "~~R",
+        "~I",
+        "4-11"
+      ],
+      [
+        "R",
+        "~E",
+        "12"
+      ],
+      [
+        "((P v Q) → R)",
+        "->I",
+        "3-13"
+      ],
+      [
+        "((Q → R) → ((P v Q) → R))",
+        "->I",
+        "2-14"
+      ],
+      [
+        "((P → R) → ((Q → R) → ((P v Q) → R)))",
+        "->I",
+        "1-15"
+      ]
+    ],
+    "category": "추가 연습 4.1",
+    "kind": "필연적 참"
+  },
+  {
+    "id": "h41-t3",
+    "title": "추가 연습 1-3 · 모순으로 가정 부정",
+    "level": "기초",
+    "premises": [],
+    "goal": "(P->(Q&~Q))->~P",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "1. 필연적 참 · 3번",
+    "hint": "P를 가정하면 Q와 ~Q를 함께 얻습니다. ⊥I, ~I 순서로 적용하세요.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "solution": [
+      [
+        "(P → (Q & ~Q))",
+        "가정",
+        ""
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "(Q & ~Q)",
+        "->E",
+        "1,2"
+      ],
+      [
+        "Q",
+        "&E",
+        "3"
+      ],
+      [
+        "~Q",
+        "&E",
+        "3"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "4,5"
+      ],
+      [
+        "~P",
+        "~I",
+        "2-6"
+      ],
+      [
+        "((P → (Q & ~Q)) → ~P)",
+        "->I",
+        "1-7"
+      ]
+    ],
+    "category": "추가 연습 4.1",
+    "kind": "필연적 참"
+  },
+  {
+    "id": "h41-t4",
+    "title": "추가 연습 1-4 · 부정에서 원명제로",
+    "level": "중급",
+    "premises": [],
+    "goal": "(~P->P)->P",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "1. 필연적 참 · 4번",
+    "hint": "~P → P를 가정한 뒤 ~P를 가정하세요. 모순에서 ~~P를 얻고 ~E를 적용합니다.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "solution": [
+      [
+        "(~P → P)",
+        "가정",
+        ""
+      ],
+      [
+        "~P",
+        "가정",
+        ""
+      ],
+      [
+        "P",
+        "->E",
+        "1,2"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "2,3"
+      ],
+      [
+        "~~P",
+        "~I",
+        "2-4"
+      ],
+      [
+        "P",
+        "~E",
+        "5"
+      ],
+      [
+        "((~P → P) → P)",
+        "->I",
+        "1-6"
+      ]
+    ],
+    "category": "추가 연습 4.1",
+    "kind": "필연적 참"
+  },
+  {
+    "id": "h41-t5",
+    "title": "추가 연습 1-5 · 선언 속 조건문",
+    "level": "심화",
+    "premises": [],
+    "goal": "P v (P->Q)",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "1. 필연적 참 · 5번",
+    "hint": "결론의 부정을 가정하세요. P를 가정하면 선언 도입으로 모순이 생깁니다. ~P를 얻은 뒤 P → Q를 만들어 보세요.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "category": "추가 연습 4.1",
+    "solution": [
+      [
+        "~(P v (P → Q))",
+        "가정",
+        ""
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "(P v (P → Q))",
+        "vI",
+        "2"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "1,3"
+      ],
+      [
+        "~P",
+        "~I",
+        "2-4"
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "5,6"
+      ],
+      [
+        "~Q",
+        "가정",
+        ""
+      ],
+      [
+        "⊥",
+        "R",
+        "7"
+      ],
+      [
+        "~~Q",
+        "~I",
+        "8-9"
+      ],
+      [
+        "Q",
+        "~E",
+        "10"
+      ],
+      [
+        "(P → Q)",
+        "->I",
+        "6-11"
+      ],
+      [
+        "(P v (P → Q))",
+        "vI",
+        "12"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "1,13"
+      ],
+      [
+        "~~(P v (P → Q))",
+        "~I",
+        "1-14"
+      ],
+      [
+        "(P v (P → Q))",
+        "~E",
+        "15"
+      ]
+    ],
+    "kind": "필연적 참"
+  },
+  {
+    "id": "h41-v1",
+    "title": "추가 연습 2-1 · 연언 후건의 부정",
+    "level": "기초",
+    "premises": [
+      "P->(Q&R)",
+      "~Q"
+    ],
+    "goal": "~P",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "2. 타당성 · 1번",
+    "hint": "P를 가정해 Q & R을 얻고, Q를 꺼내 ~Q와 모순을 만드세요.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "solution": [
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "(Q & R)",
+        "->E",
+        "1,3"
+      ],
+      [
+        "Q",
+        "&E",
+        "4"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "2,5"
+      ],
+      [
+        "~P",
+        "~I",
+        "3-6"
+      ]
+    ],
+    "category": "추가 연습 4.1",
+    "kind": "타당성"
+  },
+  {
+    "id": "h41-v2",
+    "title": "추가 연습 2-2 · 두 조건문의 선언",
+    "level": "심화",
+    "premises": [
+      "(P&Q)->R"
+    ],
+    "goal": "(P->R) v (Q->R)",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "2. 타당성 · 2번",
+    "hint": "결론의 부정을 가정하고 각 조건문을 가정했을 때 모순이 됨을 이용하세요. P와 Q가 함께 있으면 R을 얻을 수 있습니다.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "category": "추가 연습 4.1",
+    "solution": [
+      [
+        "~((P → R) v (Q → R))",
+        "가정",
+        ""
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "Q",
+        "가정",
+        ""
+      ],
+      [
+        "(P & Q)",
+        "&I",
+        "3,4"
+      ],
+      [
+        "R",
+        "->E",
+        "1,5"
+      ],
+      [
+        "(Q → R)",
+        "->I",
+        "4-6"
+      ],
+      [
+        "((P → R) v (Q → R))",
+        "vI",
+        "7"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "2,8"
+      ],
+      [
+        "~P",
+        "~I",
+        "3-9"
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "10,11"
+      ],
+      [
+        "~R",
+        "가정",
+        ""
+      ],
+      [
+        "⊥",
+        "R",
+        "12"
+      ],
+      [
+        "~~R",
+        "~I",
+        "13-14"
+      ],
+      [
+        "R",
+        "~E",
+        "15"
+      ],
+      [
+        "(P → R)",
+        "->I",
+        "11-16"
+      ],
+      [
+        "((P → R) v (Q → R))",
+        "vI",
+        "17"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "2,18"
+      ],
+      [
+        "~~((P → R) v (Q → R))",
+        "~I",
+        "2-19"
+      ],
+      [
+        "((P → R) v (Q → R))",
+        "~E",
+        "20"
+      ]
+    ],
+    "kind": "타당성"
+  },
+  {
+    "id": "h41-v3",
+    "title": "추가 연습 2-3 · 조건문과 선언",
+    "level": "중급",
+    "premises": [
+      "P->(~Q->R)"
+    ],
+    "goal": "~Q->(~P v R)",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "2. 타당성 · 3번",
+    "hint": "~Q를 가정한 안에서 ~(~P v R)을 가정하세요. P로 R을 얻으면 모순이므로 ~P를 얻습니다.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "solution": [
+      [
+        "~Q",
+        "가정",
+        ""
+      ],
+      [
+        "~(~P v R)",
+        "가정",
+        ""
+      ],
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "(~Q → R)",
+        "->E",
+        "1,4"
+      ],
+      [
+        "R",
+        "->E",
+        "2,5"
+      ],
+      [
+        "(~P v R)",
+        "vI",
+        "6"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "3,7"
+      ],
+      [
+        "~P",
+        "~I",
+        "4-8"
+      ],
+      [
+        "(~P v R)",
+        "vI",
+        "9"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "3,10"
+      ],
+      [
+        "~~(~P v R)",
+        "~I",
+        "3-11"
+      ],
+      [
+        "(~P v R)",
+        "~E",
+        "12"
+      ],
+      [
+        "(~Q → (~P v R))",
+        "->I",
+        "2-13"
+      ]
+    ],
+    "category": "추가 연습 4.1",
+    "kind": "타당성"
+  },
+  {
+    "id": "h41-v4",
+    "title": "추가 연습 2-4 · 선언에서 남는 결론",
+    "level": "중급",
+    "premises": [
+      "P->(Q&R)",
+      "S->(P v T)",
+      "~R"
+    ],
+    "goal": "S->T",
+    "source": "추가 연습 4.1",
+    "page": 1,
+    "section": "2. 타당성 · 4번",
+    "hint": "P 가정에서 R과 ~R의 모순을 얻어 ~P를 도출하세요. S를 가정해 P v T를 얻고 vE를 적용합니다.",
+    "allowed": [
+      "&I",
+      "&E",
+      "vI",
+      "vE",
+      "->I",
+      "->E",
+      "~I",
+      "~E",
+      "<->I",
+      "<->E",
+      "⊥I",
+      "R",
+      "가정"
+    ],
+    "sourceFile": "handout-4-1.pdf",
+    "solution": [
+      [
+        "P",
+        "가정",
+        ""
+      ],
+      [
+        "(Q & R)",
+        "->E",
+        "1,4"
+      ],
+      [
+        "R",
+        "&E",
+        "5"
+      ],
+      [
+        "⊥",
+        "⊥I",
+        "3,6"
+      ],
+      [
+        "~P",
+        "~I",
+        "4-7"
+      ],
+      [
+        "S",
+        "가정",
+        ""
+      ],
+      [
+        "(P v T)",
+        "->E",
+        "2,9"
+      ],
+      [
+        "T",
+        "vE",
+        "8,10"
+      ],
+      [
+        "(S → T)",
+        "->I",
+        "9-11"
+      ]
+    ],
+    "category": "추가 연습 4.1",
+    "kind": "타당성"
+  },
+  {
     "id": "h5-proof-dn",
     "title": "DN의 증명",
     "level": "중급",
@@ -2147,6 +3142,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "P",
@@ -2202,6 +3199,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "((P → Q) & ~Q)",
@@ -2272,6 +3271,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "((P → Q) & (Q → R))",
@@ -2342,6 +3343,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(P → Q)",
@@ -2412,6 +3415,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "Q",
@@ -2467,6 +3472,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(((P v Q) & (P → R)) & (Q → R))",
@@ -2577,6 +3584,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(P v Q)",
@@ -2762,6 +3771,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(P v (Q v R))",
@@ -3037,6 +4048,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(P & (Q v R))",
@@ -3412,6 +4425,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(P v (Q & R))",
@@ -3757,6 +4772,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "~(P v Q)",
@@ -3917,6 +4934,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "~(P & Q)",
@@ -4097,6 +5116,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(P → Q)",
@@ -4237,6 +5258,8 @@ const PROBLEMS = [
     ],
     "kind": "규칙 증명",
     "note": "파생 규칙 자체를 증명하는 문제이므로, 10가지 기본 규칙과 ⊥I·R·가정만 사용할 수 있습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "~(P → Q)",
@@ -4460,6 +5483,8 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(D & (E v (F → G)))",
@@ -4533,6 +5558,8 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(~A → ~C)",
@@ -4603,6 +5630,8 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(B → C)",
@@ -4677,6 +5706,8 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "~A",
@@ -4763,6 +5794,8 @@ const PROBLEMS = [
       "C"
     ],
     "kind": "필연적 참",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(A → B)",
@@ -4848,6 +5881,8 @@ const PROBLEMS = [
       "C"
     ],
     "kind": "필연적 참",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "~((A & ~B) v ((B & C) v ~(C & A)))",
@@ -5073,6 +6108,8 @@ const PROBLEMS = [
       "C"
     ],
     "kind": "필연적 참",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "((A → B) & (A → ~B))",
@@ -5158,6 +6195,8 @@ const PROBLEMS = [
       "C"
     ],
     "kind": "필연적 참",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "((A → C) & (B → C))",
@@ -5239,6 +6278,8 @@ const PROBLEMS = [
     ],
     "kind": "기호화 연습",
     "note": "원문 논증을 다음 대응으로 기호화했습니다. C: 사형 제도가 잔인하다 / J: 시행이 정당화된다 / R: 범죄발생률을 줄인다 / D: 사회의 품위를 떨어뜨린다. 원문 링크에서 문장을 읽고 기호화와 비교하세요.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "J",
@@ -5425,6 +6466,8 @@ const PROBLEMS = [
     ],
     "kind": "기호화 연습",
     "note": "원문을 기호화한 연습입니다. G: 신은 그보다 더 큰 것이 생각될 수 없는 존재이다 / U: 우리는 ‘신’이라는 용어를 이해한다 / I: 신은 이해 속에 존재한다 / E: 신은 실재 속에 존재한다. 전제의 실제 참 여부가 아니라 논증의 형식을 연습합니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "~E",
@@ -5566,6 +6609,8 @@ const PROBLEMS = [
     ],
     "kind": "기호화 연습",
     "note": "원문을 기호화했습니다. A: 신은 악을 막을 능력이 있다 / W: 신은 악을 막고자 한다 / B: 신은 전선하다 / E: 신은 존재한다 / O: 신은 전능하다 / V: 악이 존재한다. 전능과 악을 막을 능력은 별도 문자로 두며 추가 전제를 가정하지 않습니다.",
+    "category": "핸드아웃 5",
+    "sourceFile": "handout-5.pdf",
     "solution": [
       [
         "(~W v ~A)",
@@ -5715,158 +6760,6 @@ const PROBLEMS = [
     ]
   },
   {
-    "id": "own-1",
-    "title": "첫걸음 · 모순 도입",
-    "level": "기초",
-    "premises": [
-      "Q",
-      "~Q"
-    ],
-    "goal": "⊥",
-    "source": "창작",
-    "page": null,
-    "section": "추가 연습",
-    "hint": "⊥를 입력하고 ⊥I, 근거 1,2를 선택하세요.",
-    "allowed": [
-      "&I",
-      "&E",
-      "vI",
-      "vE",
-      "->I",
-      "->E",
-      "~I",
-      "~E",
-      "<->I",
-      "<->E",
-      "⊥I",
-      "R",
-      "가정"
-    ],
-    "solution": [
-      [
-        "⊥",
-        "⊥I",
-        "2,1"
-      ]
-    ],
-    "kind": "타당성"
-  },
-  {
-    "id": "own-2",
-    "title": "첫걸음 · 이중부정 제거",
-    "level": "기초",
-    "premises": [
-      "~~P"
-    ],
-    "goal": "P",
-    "source": "창작",
-    "page": null,
-    "section": "추가 연습",
-    "hint": "수업의 ~E는 ~~P에서 P를 얻는 규칙입니다.",
-    "allowed": [
-      "&I",
-      "&E",
-      "vI",
-      "vE",
-      "->I",
-      "->E",
-      "~I",
-      "~E",
-      "<->I",
-      "<->E",
-      "⊥I",
-      "R",
-      "가정"
-    ],
-    "solution": [
-      [
-        "P",
-        "~E",
-        "1"
-      ]
-    ],
-    "kind": "타당성"
-  },
-  {
-    "id": "own-3",
-    "title": "첫걸음 · 선언 제거",
-    "level": "기초",
-    "premises": [
-      "P v Q",
-      "~P"
-    ],
-    "goal": "Q",
-    "source": "창작",
-    "page": null,
-    "section": "추가 연습",
-    "hint": "vE에 선언문과 ~P가 있는 두 줄을 인용하세요.",
-    "allowed": [
-      "&I",
-      "&E",
-      "vI",
-      "vE",
-      "->I",
-      "->E",
-      "~I",
-      "~E",
-      "<->I",
-      "<->E",
-      "⊥I",
-      "R",
-      "가정"
-    ],
-    "solution": [
-      [
-        "Q",
-        "vE",
-        "1,2"
-      ]
-    ],
-    "kind": "타당성"
-  },
-  {
-    "id": "own-4",
-    "title": "첫걸음 · 쌍조건문 제거",
-    "level": "기초",
-    "premises": [
-      "P <-> Q",
-      "P"
-    ],
-    "goal": "Q",
-    "source": "창작",
-    "page": null,
-    "section": "추가 연습",
-    "hint": "<->E로 P → Q를 꺼낸 뒤 ->E를 적용하세요.",
-    "allowed": [
-      "&I",
-      "&E",
-      "vI",
-      "vE",
-      "->I",
-      "->E",
-      "~I",
-      "~E",
-      "<->I",
-      "<->E",
-      "⊥I",
-      "R",
-      "가정"
-    ],
-    "solution": [
-      [
-        "(P → Q)",
-        "<->E",
-        "1"
-      ],
-      [
-        "Q",
-        "->E",
-        "3,2"
-      ]
-    ],
-    "kind": "타당성"
-  },
-  {
     "id": "own-5",
     "title": "기본 · 가정에서 부정으로",
     "level": "중급",
@@ -5894,6 +6787,7 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "창작",
     "solution": [
       [
         "P",
@@ -5943,6 +6837,7 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "창작",
     "solution": [
       [
         "P",
@@ -6037,6 +6932,7 @@ const PROBLEMS = [
         "3-4,5-6"
       ]
     ],
+    "category": "창작",
     "kind": "타당성"
   },
   {
@@ -6077,6 +6973,7 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "창작",
     "solution": [
       [
         "(P & ~Q)",
@@ -6127,6 +7024,7 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "창작",
     "solution": [
       [
         "C",
@@ -6179,6 +7077,7 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "창작",
     "solution": [
       [
         "(R → (~P & ~Q))",
@@ -6213,6 +7112,7 @@ const PROBLEMS = [
       "R",
       "가정"
     ],
+    "category": "창작",
     "solution": [
       [
         "~(P v ~P)",
@@ -6318,6 +7218,7 @@ const PROBLEMS = [
       "DM",
       "C"
     ],
+    "category": "창작",
     "solution": [
       [
         "((P & Q) v (P & R))",

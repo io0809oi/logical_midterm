@@ -25,6 +25,17 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build exercise data
+        run: npm run build
+
+      - name: Validate proofs and saved progress
+        run: npm test
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 

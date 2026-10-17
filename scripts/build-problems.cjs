@@ -1,3 +1,4 @@
+process.chdir(require('node:path').resolve(__dirname,'..'));
 const fs=require('node:fs');const L=require('../dist/logic.js');const {parse,format,op,eq,neg,contra}=L;
 const key=a=>JSON.stringify(a),B=(k,a,b)=>[k,a,b];
 class Proof{
@@ -36,6 +37,17 @@ function add(id,title,level,premises,goal,source,page,section,hint,extra={}){pro
 const h4=(id,title,level,ps,g,page,section,hint,extra)=>add('h4-'+id,title,level,ps,g,'핸드아웃 4',page,section,hint,extra);
 const h5=(id,title,level,ps,g,page,section,hint,extra)=>add('h5-'+id,title,level,ps,g,'핸드아웃 5',page,section,hint,extra);
 const own=(id,title,level,ps,g,hint,extra)=>add('own-'+id,title,level,ps,g,'창작',null,'추가 연습',hint,extra);
+const h41=(id,title,level,ps,g,section,hint,extra={})=>add('h41-'+id,title,level,ps,g,'추가 연습 4.1',1,section,hint,{sourceFile:'handout-4-1.pdf',...extra});
+// Uploaded 4.1 worksheet: retain the original section and question numbers.
+h41('t1','추가 연습 1-1 · 조건문의 연쇄','기초',[],'(Q->R)->((P->Q)->(P->R))','1. 필연적 참 · 1번','Q → R, P → Q, P를 차례로 가정한 뒤 Q와 R을 도출하세요.',{solution:[['Q->R','가정',''],['P->Q','가정',''],['P','가정',''],['Q','->E','2,3'],['R','->E','1,4'],['P->R','->I','3-5'],['(P->Q)->(P->R)','->I','2-6'],['(Q->R)->((P->Q)->(P->R))','->I','1-7']]});
+h41('t2','추가 연습 1-2 · 두 경우의 같은 결론','중급',[],'(P->R)->((Q->R)->((P v Q)->R))','1. 필연적 참 · 2번','세 전건을 가정한 뒤 ~R을 가정하세요. P가 모순임을 보이면 ~P와 P v Q에서 Q를 얻습니다.',{note:'원문 1-2 끝의 여분 닫는 괄호 한 개를 바로잡았습니다. 논리적 내용은 동일합니다.',solution:[['P->R','가정',''],['Q->R','가정',''],['P v Q','가정',''],['~R','가정',''],['P','가정',''],['R','->E','1,5'],['⊥','⊥I','4,6'],['~P','~I','5-7'],['Q','vE','3,8'],['R','->E','2,9'],['⊥','⊥I','4,10'],['~~R','~I','4-11'],['R','~E','12'],['(P v Q)->R','->I','3-13'],['(Q->R)->((P v Q)->R)','->I','2-14'],['(P->R)->((Q->R)->((P v Q)->R))','->I','1-15']]});
+h41('t3','추가 연습 1-3 · 모순으로 가정 부정','기초',[],'(P->(Q&~Q))->~P','1. 필연적 참 · 3번','P를 가정하면 Q와 ~Q를 함께 얻습니다. ⊥I, ~I 순서로 적용하세요.',{solution:[['P->(Q&~Q)','가정',''],['P','가정',''],['Q&~Q','->E','1,2'],['Q','&E','3'],['~Q','&E','3'],['⊥','⊥I','4,5'],['~P','~I','2-6'],['(P->(Q&~Q))->~P','->I','1-7']]});
+h41('t4','추가 연습 1-4 · 부정에서 원명제로','중급',[],'(~P->P)->P','1. 필연적 참 · 4번','~P → P를 가정한 뒤 ~P를 가정하세요. 모순에서 ~~P를 얻고 ~E를 적용합니다.',{solution:[['~P->P','가정',''],['~P','가정',''],['P','->E','1,2'],['⊥','⊥I','2,3'],['~~P','~I','2-4'],['P','~E','5'],['(~P->P)->P','->I','1-6']]});
+h41('t5','추가 연습 1-5 · 선언 속 조건문','심화',[],'P v (P->Q)','1. 필연적 참 · 5번','결론의 부정을 가정하세요. P를 가정하면 선언 도입으로 모순이 생깁니다. ~P를 얻은 뒤 P → Q를 만들어 보세요.');
+h41('v1','추가 연습 2-1 · 연언 후건의 부정','기초',['P->(Q&R)','~Q'],'~P','2. 타당성 · 1번','P를 가정해 Q & R을 얻고, Q를 꺼내 ~Q와 모순을 만드세요.',{solution:[['P','가정',''],['Q&R','->E','1,3'],['Q','&E','4'],['⊥','⊥I','2,5'],['~P','~I','3-6']]});
+h41('v2','추가 연습 2-2 · 두 조건문의 선언','심화',['(P&Q)->R'],'(P->R) v (Q->R)','2. 타당성 · 2번','결론의 부정을 가정하고 각 조건문을 가정했을 때 모순이 됨을 이용하세요. P와 Q가 함께 있으면 R을 얻을 수 있습니다.');
+h41('v3','추가 연습 2-3 · 조건문과 선언','중급',['P->(~Q->R)'],'~Q->(~P v R)','2. 타당성 · 3번','~Q를 가정한 안에서 ~(~P v R)을 가정하세요. P로 R을 얻으면 모순이므로 ~P를 얻습니다.',{solution:[['~Q','가정',''],['~(~P v R)','가정',''],['P','가정',''],['~Q->R','->E','1,4'],['R','->E','2,5'],['~P v R','vI','6'],['⊥','⊥I','3,7'],['~P','~I','4-8'],['~P v R','vI','9'],['⊥','⊥I','3,10'],['~~(~P v R)','~I','3-11'],['~P v R','~E','12'],['~Q->(~P v R)','->I','2-13']]});
+h41('v4','추가 연습 2-4 · 선언에서 남는 결론','중급',['P->(Q&R)','S->(P v T)','~R'],'S->T','2. 타당성 · 4번','P 가정에서 R과 ~R의 모순을 얻어 ~P를 도출하세요. S를 가정해 P v T를 얻고 vE를 적용합니다.',{solution:[['P','가정',''],['Q&R','->E','1,4'],['R','&E','5'],['⊥','⊥I','3,6'],['~P','~I','4-7'],['S','가정',''],['P v T','->E','2,9'],['T','vE','8,10'],['S->T','->I','9-11']]});
 const restricted1=['->E','vE','vI','R'];const restricted2=[...restricted1,'->I','가정'];
 h4('e1-1','연습 1 · 1번','기초',['A -> ~D','D v C','A'],'C v D',5,'연습 1 (1)','A로부터 ~D를 얻고, D v C에서 D를 제외하세요.',{allowed:restricted1,solution:[['~D','->E','1,3'],['C','vE','2,4'],['C v D','vI','5']]});
 h4('e1-2','연습 1 · 2번','기초',['(M v ~T)->(A v J)','~A','B v M','~A -> ~B'],'J v D',6,'연습 1 (2)','~B를 얻어 M을 남긴 뒤, M v ~T를 만들어 첫 조건문을 사용하세요.',{allowed:restricted1,solution:[['~B','->E','2,4'],['M','vE','3,5'],['M v ~T','vI','6'],['A v J','->E','1,7'],['J','vE','8,2'],['J v D','vI','9']]});
@@ -98,6 +110,8 @@ own('11','도전 · 배중률','심화',[],'P v ~P','~(P v ~P)를 가정하여 ~
 own('12','도전 · 분배와 후건 부정','심화',['P&(Q v R)','(P&Q)->S','(P&R)->S','~S'],'⊥','DR로 두 경우를 만든 뒤 AC를 적용하면 S가 나옵니다.',derived);
 // Short hand-authored classroom solutions where derived rules are allowed.
 const short={
+'h41-t5':[['~(P v (P->Q))','가정',''],['P','가정',''],['P v (P->Q)','vI','2'],['⊥','⊥I','1,3'],['~P','~I','2-4'],['P','가정',''],['⊥','⊥I','5,6'],['~Q','가정',''],['⊥','R','7'],['~~Q','~I','8-9'],['Q','~E','10'],['P->Q','->I','6-11'],['P v (P->Q)','vI','12'],['⊥','⊥I','1,13'],['~~(P v (P->Q))','~I','1-14'],['P v (P->Q)','~E','15']],
+'h41-v2':[['~((P->R) v (Q->R))','가정',''],['P','가정',''],['Q','가정',''],['P&Q','&I','3,4'],['R','->E','1,5'],['Q->R','->I','4-6'],['(P->R) v (Q->R)','vI','7'],['⊥','⊥I','2,8'],['~P','~I','3-9'],['P','가정',''],['⊥','⊥I','10,11'],['~R','가정',''],['⊥','R','12'],['~~R','~I','13-14'],['R','~E','15'],['P->R','->I','11-16'],['(P->R) v (Q->R)','vI','17'],['⊥','⊥I','2,18'],['~~((P->R) v (Q->R))','~I','2-19'],['(P->R) v (Q->R)','~E','20']],
 'h4-extra1':[['B<->~C','<->I','1,2']],
 'h5-e1':[['D&(E v (F->G))','DR','3'],['D','&E','4'],['C v D','vI','5'],['(C v D)->~B','<->E','2'],['~B','->E','6,7'],['A','vE','1,8']],
 'h5-e2':[['~A->~C','CA','1,2'],['C','가정',''],['~~A','MT','3,4'],['A','~E','5'],['C->A','->I','4-6']],
@@ -115,6 +129,9 @@ function prune(p){
  const ids=[...keep].sort((a,b)=>a-b),map=new Map(ids.map((n,i)=>[n,i+1]));
  p.solution=ids.filter(n=>n>p.premises.length).map(n=>{let l=s.lines[n-1];return [format(l.a),l.rule,l.refs.replace(/\d+/g,x=>map.get(Number(x)))];});
 }
-for(const p of problems){if(short[p.id])p.solution=short[p.id];if(!p.solution){let pr=new Proof(p);pr.prove(parse(p.goal));p.solution=pr.out}prune(p);let s=L.initial(p.premises);for(const [f,r,refs] of p.solution)s=r==='닫기'?L.close(s):L.add(s,f,r,refs,p.allowed);if(s.stack.length||!eq(s.lines.at(-1).a,parse(p.goal))||s.lines.at(-1).path.length)throw Error('Incomplete '+p.id);p.kind??=p.premises.length?'타당성':'필연적 참';console.log(p.id,p.solution.length)}
+const starterIds=new Set(['own-1','own-2','own-3','own-4']);
+const sourceOrder={'핸드아웃 4':1,'추가 연습 4.1':2,'핸드아웃 5':3,'창작':4};
+problems.sort((a,b)=>(starterIds.has(a.id)?0:sourceOrder[a.source])-(starterIds.has(b.id)?0:sourceOrder[b.source]));
+for(const p of problems){p.category=starterIds.has(p.id)?'첫걸음':p.source;if(p.page)p.sourceFile??=p.source==='핸드아웃 4'?'handout-4.pdf':'handout-5.pdf';if(short[p.id])p.solution=short[p.id];if(!p.solution){let pr=new Proof(p);pr.prove(parse(p.goal));p.solution=pr.out}prune(p);let s=L.initial(p.premises);for(const [f,r,refs] of p.solution)s=r==='닫기'?L.close(s):L.add(s,f,r,refs,p.allowed);if(s.stack.length||!eq(s.lines.at(-1).a,parse(p.goal))||s.lines.at(-1).path.length)throw Error('Incomplete '+p.id);p.kind??=p.premises.length?'타당성':'필연적 참';console.log(p.id,p.solution.length)}
 fs.writeFileSync('dist/problems.js','// Classroom edition: source page numbers refer to the supplied PDFs.\nconst PROBLEMS = '+JSON.stringify(problems,null,2)+';\nif(typeof module!=="undefined")module.exports=PROBLEMS;\n');
 console.log('TOTAL',problems.length);
